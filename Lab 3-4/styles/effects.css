@@ -1,0 +1,78 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+    background: #fdfdfd;
+}
+
+/* 1. Gradient Text */
+.grad-text {
+    font-size: 50px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 2. Text Clipping with Image */
+.clip-text {
+    font-size: 60px;
+    font-weight: 900;
+    background-image: url('images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+/* 3. Custom Checkbox/Radio */
+.controls { margin: 40px 0; }
+
+input[type="checkbox"], input[type="radio"] {
+    display: none;
+}
+
+.checkmark, .radiomark {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.radiomark { border-radius: 50%; }
+
+input:checked + .checkmark { background-color: #2196F3; }
+input:checked + .radiomark { background-color: #4CAF50; }
+
+/* 4. Loading Animation */
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 5. Complex Shadows */
+.complex-shadow {
+    width: 200px;
+    padding: 20px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 
+        0 1px 1px rgba(0,0,0,0.12), 
+        0 2px 2px rgba(0,0,0,0.12), 
+        0 4px 4px rgba(0,0,0,0.12), 
+        0 8px 8px rgba(0,0,0,0.12);
+}

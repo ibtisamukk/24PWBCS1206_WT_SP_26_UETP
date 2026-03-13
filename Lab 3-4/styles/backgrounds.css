@@ -1,0 +1,45 @@
+body {
+    margin: 20px;
+}
+
+div {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.solid {
+    background-color: darkblue;
+}
+
+.repeat-pattern {
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-repeat: repeat;
+    background-color: grey;
+}
+
+.linear-grad {
+    background: linear-gradient(to right, red, yellow);
+}
+
+.radial-grad {
+    background: radial-gradient(circle, green, white);
+    color: black;
+}
+
+.multi-layer {
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), linear-gradient(blue, black);
+}
+
+.blend {
+    background-image: url('https://via.placeholder.com/300');
+    background-color: purple;
+    background-blend-mode: multiply;
+}

@@ -1,0 +1,75 @@
+* {
+    margin: 5px;
+}
+
+body {
+    background: white;
+}
+
+.intro {
+    color: blue;
+}
+
+#box {
+    border: 1px solid black;
+}
+
+h1, h2, h3 {
+    text-decoration: underline;
+}
+
+[title="field"] {
+    border: 1px solid green;
+}
+
+[type="password"] {
+    background: yellow;
+}
+
+[placeholder*="Email"] {
+    color: red;
+}
+
+div p {
+    font-weight: bold;
+}
+
+ul > li {
+    list-style: square;
+}
+
+h3 + ul {
+    margin-top: 20px;
+}
+
+p ~ span {
+    color: green;
+}
+
+button:hover {
+    background: orange;
+}
+
+input:focus {
+    background: pink;
+}
+
+li:first-child {
+    text-transform: uppercase;
+}
+
+li:nth-child(2) {
+    background: lightgray;
+}
+
+button:active {
+    color: white;
+}
+
+.intro::first-letter {
+    font-size: 40px;
+}
+
+h2::after {
+    content: " - End";
+}

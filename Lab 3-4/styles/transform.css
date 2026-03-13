@@ -1,0 +1,62 @@
+body {
+    background: #222;
+    color: white;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 50px;
+    width: 80%;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    background: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.5s;
+    border: 2px solid white;
+}
+
+.rotate:hover {
+    transform: rotate(45deg);
+}
+
+.scale:hover {
+    transform: scale(1.5);
+}
+
+.translate:hover {
+    transform: translate(20px, -20px);
+}
+
+.skew:hover {
+    transform: skewX(20deg);
+}
+
+.origin {
+    transform-origin: top left;
+}
+.origin:hover {
+    transform: rotate(30deg);
+}
+
+.three-d {
+    perspective: 500px;
+}
+.three-d:hover {
+    transform: rotateY(180deg);
+}
+
+.combined:hover {
+    transform: rotate(45deg) scale(0.5) translate(10px);
+    background: red;
+}
