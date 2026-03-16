@@ -1,0 +1,148 @@
+:root {
+    --dark: #0f172a;
+    --accent: #6366f1;
+    --bg: #ffffff;
+    --text: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: var(--bg);
+}
+
+.mag-header {
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.mag-header p {
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+.mag-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+}
+
+.mag-header h1 span {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.magazine-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.img-frame {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: 20px 0 10px;
+}
+
+.category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 20px 0;
+}
+
+.stat-box {
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 4px;
+}
+
+.stat-box.accent {
+    background: var(--dark);
+    color: white;
+}
+
+.num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .magazine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .featured, .wide-story {
+        grid-column: span 2;
+    }
+    .wide-story {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .wide-story img {
+        width: 50%;
+        height: 300px;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .magazine-grid {
+        grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .featured {
+        grid-column: 1 / 3;
+    }
+
+    .sidebar-story {
+        grid-column: 3 / 4;
+        border-left: 1px solid #e2e8f0;
+        padding-left: 30px;
+    }
+
+    .stat-box {
+        grid-column: 4 / 5;
+    }
+
+    .wide-story {
+        grid-column: 1 / 4;
+        margin-top: 20px;
+    }
+}

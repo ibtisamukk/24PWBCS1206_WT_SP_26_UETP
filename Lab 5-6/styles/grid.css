@@ -1,0 +1,71 @@
+/* Gallery Container */
+.gallery-grid {
+    display: grid;
+    /* Responsive tracks that adapt to screen size */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 200px; /* Base row height */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Base Item Styles */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Masonry Spanning Logic */
+.span-v { grid-row: span 2; }
+.span-h { grid-column: span 2; }
+
+/* Hover Effects and Overlays */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; 
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); 
+}
+
+.overlay span {
+    color: white;
+    font-weight: 600;
+    border: 2px solid white;
+    padding: 10px 20px;
+}
+
+/* Media Query Adjustments */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-auto-rows: auto;
+    }
+    
+    .span-v, .span-h {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UET Admin | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container" id="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">⚡</div>
+                <div class="brand-text">UET<span>.</span>Lab</div>
+            </div>
+            
+            <nav class="side-nav">
+                <a href="#" class="active">
+                    <span class="icon">📊</span>
+                    <span class="label">Overview</span>
+                </a>
+                <a href="#">
+                    <span class="icon">👥</span>
+                    <span class="label">Students</span>
+                </a>
+                <a href="#">
+                    <span class="icon">📚</span>
+                    <span class="label">Courses</span>
+                </a>
+                <a href="#">
+                    <span class="icon">⚙️</span>
+                    <span class="label">Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <header class="top-bar">
+            <div class="left-section">
+                <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search analytics...">
+                </div>
+            </div>
+            
+            <div class="user-meta">
+                <div class="user-info">
+                    <span class="user-name">Ibtisam Ullah</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+                <div class="avatar">IU</div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="welcome-header">
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back! Here's a summary of your lab metrics.</p>
+            </div>
+
+            <div class="stats-wrapper">
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <p class="stat-label">TOTAL STUDENTS</p>
+                        <p class="stat-value">1,482</p>
+                    </div>
+                    <div class="stat-icon-bg">🎓</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <p class="stat-label">AVG ATTENDANCE</p>
+                        <p class="stat-value">92%</p>
+                    </div>
+                    <div class="stat-icon-bg">📅</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-details">
+                        <p class="stat-label">ACTIVE PROJECTS</p>
+                        <p class="stat-value">24</p>
+                    </div>
+                    <div class="stat-icon-bg">🚀</div>
+                </div>
+            </div>
+
+            <div class="canvas-area">
+                <p>Data Visualization Placeholder</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('dashboard').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>

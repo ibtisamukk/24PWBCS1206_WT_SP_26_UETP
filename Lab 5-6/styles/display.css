@@ -1,0 +1,90 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 1. Comparison Styles */
+.block-box {
+    display: block; /* [cite: 32] */
+    background: #818cf8;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.inline-box {
+    display: inline; /* [cite: 33] */
+    background: #fbbf24;
+    padding: 10px;
+}
+
+.inline-block-box {
+    display: inline-block; /*  */
+    background: #34d399;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+/* 2. Pseudo-Table using Display: Table */
+.pseudo-table {
+    display: table; /*  */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.header {
+    font-weight: bold;
+    background: #e2e8f0;
+}
+
+.table-cell {
+    display: table-cell; /* [cite: 142] */
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+}
+
+/* 3. Responsive & Hidden Elements */
+.box {
+    padding: 20px;
+    margin: 10px 0;
+    color: white;
+}
+
+.invisible {
+    visibility: hidden; /* Takes up space but invisible  */
+    background: #94a3b8;
+}
+
+.hide-on-mobile {
+    display: block;
+    background: #f87171;
+}
+
+/* Media Query for Screen Adjustments [cite: 113, 114] */
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none; /* Completely removed from flow [cite: 35, 145] */
+    }
+    
+    .inline-block-box {
+        display: block; /* Changes behavior for mobile [cite: 143] */
+        width: 100%;
+    }
+}

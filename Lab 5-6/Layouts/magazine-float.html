@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Float-Based Magazine</title>
+    <link rel="stylesheet" href="../styles/float.css">
+</head>
+<body>
+
+    <header class="mag-header">
+        <h1>THE TECH CHRONICLE</h1>
+    </header>
+
+    <div class="wrapper clearfix">
+        <main class="main-content">
+            <article>
+                <h2>The Future of Web Layouts</h2>
+                <img src="../images/gallery/Profile Pic.jpg" alt="Article Image" class="img-float-left">
+                <p>
+                    Floating elements allow text to wrap around them, which is perfect for magazine 
+                    layouts. By using <code>float: left</code> or <code>right</code>, we can create 
+                    dynamic spacing that feels like a traditional print newspaper.
+                </p>
+                <p>
+                    However, floats can cause the parent container to "collapse". 
+                    To fix this, we use a technique called a <strong>Clearfix</strong>. 
+                    This ensures that the background and borders of the container stretch to 
+                    fit the floating elements inside.
+                </p>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Trending Topics</h3>
+            <ul>
+                <li>CSS Architecture</li>
+                <li>Responsive Design</li>
+                <li>Float Mastery</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="mag-footer">
+        <p>&copy; 2026 Magazine Layout Task</p>
+    </footer>
+
+</body>
+</html>

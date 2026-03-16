@@ -1,0 +1,215 @@
+:root {
+    --primary: #6366f1;
+    --sidebar-bg: #0f172a;
+    --main-bg: #f8fafc;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+}
+
+/* --- 1. CSS GRID MAIN STRUCTURE --- */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    height: 100vh;
+    transition: var(--transition);
+}
+
+/* Collapsed state for JS toggle */
+.dashboard-container.collapsed {
+    grid-template-columns: 80px 1fr;
+}
+
+/* --- 2. SIDEBAR (Grid Area: sidebar) --- */
+.sidebar {
+    grid-area: sidebar;
+    background: var(--sidebar-bg);
+    color: white;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    overflow: hidden;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 10px;
+}
+
+.logo-icon {
+    min-width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.brand-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.brand-text span { color: var(--primary); }
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.side-nav a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.side-nav a:hover, .side-nav a.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+}
+
+/* --- 3. TOP BAR (Grid Area: header) --- */
+.top-bar {
+    grid-area: header;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.left-section { display: flex; align-items: center; gap: 20px; }
+
+.menu-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.search-bar input {
+    padding: 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 320px;
+    outline: none;
+    background: #f1f5f9;
+}
+
+.user-meta { display: flex; align-items: center; gap: 15px; }
+
+.user-info { text-align: right; }
+.user-name { display: block; font-weight: 700; font-size: 0.9rem; }
+.user-role { font-size: 0.75rem; color: var(--text-muted); }
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* --- 4. MAIN CONTENT (Grid Area: main) --- */
+.main-content {
+    grid-area: main;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.welcome-header h1 { font-size: 1.8rem; margin-bottom: 5px; }
+.welcome-header p { color: var(--text-muted); margin-bottom: 35px; }
+
+/* Flexbox Stat Cards */
+
+.stats-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.stat-card {
+    flex: 1 1 300px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.stat-label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; }
+.stat-value { font-size: 1.8rem; font-weight: 800; margin-top: 5px; }
+
+.stat-icon-bg {
+    width: 55px;
+    height: 55px;
+    background: #eef2ff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.canvas-area {
+    margin-top: 30px;
+    height: 350px;
+    background: white;
+    border-radius: 20px;
+    border: 2px dashed var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+/* --- 5. RESPONSIVE QUERIES --- */
+@media (max-width: 1024px) {
+    .dashboard-container { grid-template-columns: 80px 1fr; }
+    .brand-text, .label, .user-info { display: none; }
+    .side-nav a { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "main";
+    }
+    .sidebar { display: none; }
+    .search-bar { display: none; }
+    .top-bar { padding: 0 20px; }
+}

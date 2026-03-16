@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7: Holy Grail Implementation Comparison</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f0f2f5; color: #333; }
+        header, footer { background: #1e293b; color: white; padding: 20px; text-align: center; font-weight: bold; }
+        nav { background: #cbd5e1; padding: 15px; text-align: center; }
+        aside { background: #e2e8f0; padding: 15px; text-align: center; }
+        main { background: #ffffff; padding: 20px; min-height: 200px; border: 1px solid #ddd; }
+        section { margin-bottom: 50px; border-bottom: 5px solid #6366f1; padding-bottom: 20px; }
+        h2 { background: #6366f1; color: white; padding: 10px; margin: 0; text-align: center; }
+
+        /* --- 1. FLOAT-BASED IMPLEMENTATION --- */
+        .float-container { width: 100%; }
+        .clearfix::after { content: ""; clear: both; display: table; }
+        
+        /* Desktop Floats */
+        .float-nav { float: left; width: 20%; box-sizing: border-box; }
+        .float-main { float: left; width: 60%; box-sizing: border-box; }
+        .float-aside { float: left; width: 20%; box-sizing: border-box; }
+
+        @media (max-width: 768px) {
+            .float-nav, .float-main, .float-aside { float: none; width: 100%; }
+        }
+
+        /* --- 2. FLEXBOX IMPLEMENTATION (Mobile First) --- */
+        .flex-wrapper { display: flex; flex-direction: column; min-height: 400px; }
+        .flex-body { display: flex; flex-direction: column; flex: 1; }
+
+        @media (min-width: 768px) {
+            .flex-body { flex-direction: row; }
+            .flex-main { flex: 1; } /* Grows to fill middle space */
+            .flex-nav, .flex-aside { width: 200px; }
+            .flex-nav { order: -1; } /* Moves nav to the left */
+        }
+
+        /* --- 3. CSS GRID IMPLEMENTATION --- */
+        .grid-container {
+            display: grid;
+            gap: 5px;
+            grid-template-areas: 
+                "header"
+                "main"
+                "nav"
+                "aside"
+                "footer";
+        }
+
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 200px 1fr 200px;
+                grid-template-areas: 
+                    "header header header"
+                    "nav    main   aside"
+                    "footer footer footer";
+            }
+        }
+        .g-header { grid-area: header; }
+        .g-nav { grid-area: nav; }
+        .g-main { grid-area: main; }
+        .g-aside { grid-area: aside; }
+        .g-footer { grid-area: footer; }
+
+        /* Comparison Table Styling */
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        .comparison-table th, .comparison-table td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+        .comparison-table th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h2>Method 1: Float-Based</h2>
+        <div class="float-container clearfix">
+            <header>Header</header>
+            <nav class="float-nav">Navigation (Left)</nav>
+            <main class="float-main">
+                <h3>Main Content Area</h3>
+                <p>Created using <code>float: left</code> and percentages. Requires <code>clearfix</code> to prevent container collapse.</p>
+            </main>
+            <aside class="float-aside">Sidebar (Right)</aside>
+            <footer style="clear: both;">Footer</footer>
+        </div>
+    </section>
+
+    <section>
+        <h2>Method 2: Flexbox (Mobile First)</h2>
+        <div class="flex-wrapper">
+            <header>Header</header>
+            <div class="flex-body">
+                <main class="flex-main">
+                    <h3>Main Content Area</h3>
+                    <p>Uses <code>flex-direction: column</code> for mobile and <code>row</code> for desktop. Clean and efficient.</p>
+                </main>
+                <nav class="flex-nav">Navigation (Order: -1)</nav>
+                <aside class="flex-aside">Sidebar</aside>
+            </div>
+            <footer>Footer</footer>
+        </div>
+    </section>
+
+    <section>
+        <h2>Method 3: CSS Grid (Template Areas)</h2>
+        <div class="grid-container">
+            <header class="g-header">Header</header>
+            <nav class="g-nav">Navigation</nav>
+            <main class="g-main">
+                <h3>Main Content Area</h3>
+                <p>Most advanced method. Uses <code>grid-template-areas</code> to map the layout in 2D space.</p>
+            </main>
+            <aside class="g-aside">Sidebar</aside>
+            <footer class="g-footer">Footer</footer>
+        </div>
+    </section>
+
+    <section style="padding: 20px;">
+        <h2>Documentation & Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Floats</th>
+                    <th>Flexbox</th>
+                    <th>CSS Grid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Complexity</strong></td>
+                    <td>High (Math required)</td>
+                    <td>Low (Directional)</td>
+                    <td>Very Low (Visual Mapping)</td>
+                </tr>
+                <tr>
+                    <td><strong>Equal Height</strong></td>
+                    <td>No (Manual)</td>
+                    <td>Yes (Automatic)</td>
+                    <td>Yes (Automatic)</td>
+                </tr>
+                <tr>
+                    <td><strong>Mobile First</strong></td>
+                    <td>Difficult</td>
+                    <td>Excellent</td>
+                    <td>Excellent</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>

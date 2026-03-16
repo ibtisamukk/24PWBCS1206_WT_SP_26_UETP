@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8: E-commerce Product Grid</title>
+    <link rel="stylesheet" href="../styles/ecommerce.css">
+</head>
+<body>
+
+    <div class="shop-container">
+        <header class="shop-header">
+            <button class="filter-toggle" onclick="toggleSidebar()">☰ Filters</button>
+            <h1>Tech Gadgets Store</h1>
+        </header>
+
+        <aside class="filter-sidebar" id="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">×</button>
+            <h3>Categories</h3>
+            <ul>
+                <li><input type="checkbox"> Laptops</li>
+                <li><input type="checkbox"> Smartphones</li>
+                <li><input type="checkbox"> Accessories</li>
+            </ul>
+            <h3>Price Range</h3>
+            <input type="range" min="0" max="1000">
+        </aside>
+
+        <main class="product-grid">
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="../images/gallery/Pic1.jpg" alt="Product">
+                </div>
+                <div class="details">
+                    <h4>Wireless Headphones</h4>
+                    <p class="price">$199.00</p>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-box"><img src="../images/gallery/Pic1.jpg" alt="Product"></div>
+                <div class="details"><h4>Smart Watch</h4><p class="price">$299.00</p><button class="buy-btn">Add to Cart</button></div>
+            </div>
+            <div class="product-card">
+                <div class="img-box"><img src="../images/gallery/Pic1.jpg" alt="Product"></div>
+                <div class="details"><h4>Gaming Mouse</h4><p class="price">$89.00</p><button class="buy-btn">Add to Cart</button></div>
+            </div>
+            <div class="product-card">
+                <div class="img-box"><img src="../images/gallery/Pic1.jpg" alt="Product"></div>
+                <div class="details"><h4>Mechanical Keyboard</h4><p class="price">$150.00</p><button class="buy-btn">Add to Cart</button></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

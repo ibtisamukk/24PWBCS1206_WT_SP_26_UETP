@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4: Flexbox Navigation</title>
+    <link rel="stylesheet" href="../styles/flexbox.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">UET Lab</div>
+        
+        <button class="mobile-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Courses ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Web Tech</a></li>
+                    <li><a href="#">Data Science</a></li>
+                    <li><a href="#">OS</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar-nav">
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <h1>Flexbox Navigation System</h1>
+            <p>Resize the browser to see the menu transform into a mobile-friendly layout.</p>
+        </main>
+    </div>
+
+    <script>
+        const toggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('.nav-links');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            toggle.classList.toggle('toggle-anim');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* --- 1. BASE UTILITIES (Mobile First) --- */
+.d-block  { display: block; }
+.d-none   { display: none; }
+.d-flex   { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-1   { flex: 1; }
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+
+/* Spacing */
+.p-10  { padding: 10px; }
+.p-20  { padding: 20px; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.gap-20 { gap: 20px; }
+
+/* Colors */
+.bg-alert   { background: #fee2e2; color: #b91c1c; border-radius: 8px; }
+.bg-success { background: #dcfce7; color: #15803d; border-radius: 8px; }
+.border     { border: 1px solid #ddd; border-radius: 8px; }
+
+/* --- 2. RESPONSIVE UTILITIES (MD / 768px+) --- */
+@media (min-width: 768px) {
+    /* Responsive Display */
+    .md-d-none   { display: none; }
+    .md-d-block  { display: block; }
+    
+    /* Responsive Flex */
+    .md-flex-row { flex-direction: row; }
+    
+    /* Responsive Text */
+    .md-text-left { text-align: left; }
+    
+    /* Responsive Spacing */
+    .md-p-40 { padding: 40px; }
+}

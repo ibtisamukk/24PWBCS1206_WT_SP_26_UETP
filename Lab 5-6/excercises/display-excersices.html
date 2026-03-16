@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1: Display Property Showcase</title>
+    <link rel="stylesheet" href="../styles/display.css">
+</head>
+<body>
+
+    <section class="container">
+        <h2>1. Block vs Inline vs Inline-Block</h2>
+        <div class="block-box">Block Element (Takes full width)</div>
+        <span class="inline-box">Inline Element</span>
+        <span class="inline-box">Inline Element</span>
+        <div class="inline-block-box">Inline-Block</div>
+        <div class="inline-block-box">Inline-Block</div>
+    </section>
+
+    <section class="container">
+        <h2>2. Table Display (No Table Markup)</h2>
+        <div class="pseudo-table">
+            <div class="table-row header">
+                <div class="table-cell">Property</div>
+                <div class="table-cell">Behavior</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Block</div>
+                <div class="table-cell">New line, full width</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Inline</div>
+                <div class="table-cell">Same line, content width</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>3. Hidden vs Invisible</h2>
+        <p>Mobile users: The red box below is hidden via <code>display: none</code>.</p>
+        <div class="box hide-on-mobile">Hidden on Mobile</div>
+        <div class="box invisible">Visibility: Hidden (Space Kept)</div>
+    </section>
+
+</body>
+</html>

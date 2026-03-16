@@ -1,0 +1,73 @@
+/* Base Styles */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: #333;
+    background: #fdfdfd;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.mag-header {
+    text-align: center;
+    border-bottom: 3px double #333;
+    padding: 40px 0;
+}
+
+/* 1. Clearfix Technique */
+/* Necessary because floated children don't give height to parents [cite: 48] */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* 2. Column Layout [cite: 44] */
+.main-content {
+    float: left;
+    width: 65%; /* Desktop width */
+    padding-right: 5%;
+}
+
+.sidebar {
+    float: right;
+    width: 30%; /* Desktop width */
+    background: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+/* 3. Image Wrapping  */
+.img-float-left {
+    float: left;
+    width: 200px;
+    margin: 0 20px 10px 0;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 4. Responsive Media Queries [cite: 151] */
+@media (max-width: 768px) {
+    /* Stack columns on mobile [cite: 148] */
+    .main-content, .sidebar {
+        float: none;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .sidebar {
+        margin-top: 30px;
+    }
+
+    /* Adjust floating image for small screens */
+    .img-float-left {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
